@@ -1,13 +1,120 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* accessoryStyles -- arrows, bullets. These do not have #id prepended, so they can easily be overwritten. */
+.carrerasel2 {
+  height: 0;
+  padding-bottom: 44.5%; }
+  .carrerasel2 .car-interior.end-reached-min ~ .turnsignal.left {
+    display: none; }
+  .carrerasel2 .car-interior.end-reached-max ~ .turnsignal.right {
+    display: none; }
+  .carrerasel2 .car-indicators {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateX(-50%);
+    top: auto;
+    bottom: 0;
+    white-space: nowrap;
+    z-index: 70; }
+    .carrerasel2 .car-indicators > .bulb {
+      display: inline-block;
+      position: relative;
+      margin: 0;
+      width: 30px;
+      height: 30px;
+      vertical-align: bottom;
+      cursor: pointer; }
+      .carrerasel2 .car-indicators > .bulb:after {
+        content: ' ';
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        left: 50%;
+        bottom: 2px;
+        transform: translateX(-50%);
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: none;
+        background-color: #000; }
+      .carrerasel2 .car-indicators > .bulb.lit:after {
+        border-color: #000;
+        border-width: 1px;
+        border-style: solid;
+        background-color: transparent;
+        width: 9px;
+        height: 9px;
+        bottom: 1px; }
+  .carrerasel2 .turnsignal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.01);
+    width: 15%;
+    cursor: pointer;
+    z-index: 50; }
+    .carrerasel2 .turnsignal.left {
+      left: 0;
+      right: auto; }
+      .carrerasel2 .turnsignal.left:after {
+        content: "\2039";
+        left: 5%; }
+    .carrerasel2 .turnsignal.right {
+      left: auto;
+      right: 0; }
+      .carrerasel2 .turnsignal.right:after {
+        content: "\203A";
+        left: auto;
+        right: 5%; }
+    .carrerasel2 .turnsignal:after {
+      opacity: 0.22;
+      color: #f1f1f1;
+      text-shadow: rgba(0, 0, 0, 0.6) 0 0 3px;
+      position: absolute;
+      font-size: 54px;
+      font-family: "Arial Narrow", sans-serif;
+      weight: 400;
+      top: calc( 50% - 15px);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity 0.2s linear;
+      transition: opacity 0.2s linear; }
+    .carrerasel2 .turnsignal:hover:after {
+      opacity: 0.9; }
+  .carrerasel2.car-transtype-slidev .car-indicators {
+    left: auto;
+    right: 0;
+    bottom: auto;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    white-space: normal; }
+    .carrerasel2.car-transtype-slidev .car-indicators > .bulb {
+      display: block; }
+  .carrerasel2.car-transtype-slidev .turnsignal {
+    left: 0px;
+    right: 0px;
+    width: auto;
+    height: 15%;
+    bottom: auto; }
+    .carrerasel2.car-transtype-slidev .turnsignal.left {
+      top: 0px; }
+      .carrerasel2.car-transtype-slidev .turnsignal.left:after {
+        left: 50%;
+        top: 0px;
+        -webkit-transform: rotate(90deg) translateX(-50%);
+        transform: rotate(90deg) translateX(-50%); }
+    .carrerasel2.car-transtype-slidev .turnsignal.right {
+      top: auto;
+      bottom: 0px; }
+      .carrerasel2.car-transtype-slidev .turnsignal.right:after {
+        left: 50%;
+        right: auto;
+        bottom: 0px;
+        -webkit-transform: rotate(90deg) translateX(-50%);
+        transform: rotate(90deg) translateX(-50%); }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/*# sourceMappingURL=index.map */

@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Carrerasel2 from './Carrerasel2.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    const id = this.props.id;
+    const isComponent = ( 'undefined' == typeof window.carrerasel2 );
+    return (
+        <Carrerasel2
+        origChildren={this.props.origChildren}
+        isComponent={isComponent}
+        id={id} />
+    );
+  }
 }
 
 export default App;

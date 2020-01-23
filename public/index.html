@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
     <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,20 +19,315 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Carrerasel</title>
+    <style>
+		body {
+			margin: 0;
+			font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica, Arial, sans-serif;
+			font-size: 14px;
+		}
+		body * { box-sizing: border-box; }
+		.puppy-car {
+			font-size: 12px;
+			opacity:0.3;
+			transition: opacity 0.6s linear;
+		}
+		.puppy-car.car-panel {
+			opacity: 1;
+		}
+		
+		.puppy-slide-layout {
+		    position: relative;
+		    height: 100%;
+		    background-color: #000;
+		}
+		
+		.puppy-slide-layout img {
+		    display: block;
+		    width: 100%;
+		    height: auto;
+		    position: absolute;
+		    left: 50%;
+		    top: 50%;
+		    transform: translateX(-50%) translateY(-50%);
+		}
+		
+		p.attribution {
+		    position: absolute;
+		    background-color: rgba(255,255,255,0.8);
+		    padding: 0.5em;
+		    margin: 0;
+		    width: auto;
+		    height: auto;
+		    left: 50%;
+		    bottom: 0;
+		    text-align:center;
+		    transform: translateX(-50%);
+		}
+
+		.car-car::after {
+			content: attr(class);
+			position:absolute;
+			top:0;right:0;width:auto;height:auto;
+			padding:0.5em;
+			border-radius:0.25em;
+			background-color: rgba(0,0,0,0.5);
+			color: #FFF;
+			z-index:30;
+		}
+
+		#demoCarousel .car-interior.end-reached-max ~ .turnsignal.right {
+			display:none
+		}
+		#demoCarousel .car-interior.end-reached-min ~ .turnsignal.left {
+			display:none
+		}
+		.bulb::after {
+			box-shadow:0px 0px 3px 2px #fff;
+		}
+		.c2_placeholder .carrerasel2 {
+			height: 99vw;
+			padding-bottom:0;
+		}
+
+		@media screen and (min-width:1024px) {
+			.c2_placeholder .carrerasel2 {
+				height: 0;
+				padding-bottom:30%;
+			}
+		}
+		@media screen and (min-width:1500px) {
+			.c2_placeholder .carrerasel2 {
+				height: 450px;
+				padding-bottom:0%;
+			}
+		}
+		@media screen and (min-width:768px) and (max-width:1023px) {
+			.puppy-car {
+				opacity:1;
+			}
+			.car-car::after {
+				content:none;
+			}
+			.c2_placeholder .carrerasel2 {
+				height: auto;
+			}
+			.c2_placeholder .myCustomClass {
+			    display: flex;
+			    flex-direction:row;
+			    flex-wrap:wrap;
+			}
+			.c2_placeholder .myCustomClass .real-car {
+			    flex-basis:50%;
+			    height:44vw;
+			}
+		}
+
+
+
+	</style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div class="c2_placeholder" id="demoCarousel">
+		<div class="puppy-car"><div class="puppy-slide-layout"><img src="demo-pix/alvan-nee-CfDAo3C3bvQ-unsplash-800x.jpg" /><p class="attribution">Photo by Alvan Nee on Unsplash</p></div></div>
+		<div class="puppy-car"><div class="puppy-slide-layout"><img src="demo-pix/arjan-stalpers-8-sgismcDAQ-unsplash-800x.jpg" /><p class="attribution">Photo by Arjan Stalpers on Unsplash</p></div></div>
+		<div class="puppy-car"><div class="puppy-slide-layout"><img src="demo-pix/austin-kirk-QZenflkkwt0-unsplash-800x.jpg" /><p class="attribution">Photo by Austin Kirk on Unsplash</p></div></div>
+		<div class="puppy-car"><div class="puppy-slide-layout"><img src="demo-pix/chris-arthur-collins-qGkVJ7Tx36s-unsplash-800x.jpg" /><p class="attribution">Photo by Chris Arthur-Collins on Unsplash</p></div></div>
+		<div class="puppy-car"><div class="puppy-slide-layout"><img src="demo-pix/hannah-grace-fk4tiMlDFF0-unsplash-800x.jpg" /><p class="attribution">Photo by hannah grace on Unsplash</p></div></div>
+		<div class="puppy-car"><div class="puppy-slide-layout"><img src="demo-pix/joe-caione-qO-PIF84Vxg-unsplash-800x.jpg" /><p class="attribution">Photo by Joe Caione on Unsplash</p></div></div>
+		<div class="puppy-car"><div class="puppy-slide-layout"><img src="demo-pix/matthew-henry-2Ts5HnA67k8-unsplash-800x.jpg" /><p class="attribution">Photo by Matthew Henry on Unsplash</p></div></div>
+		<div class="puppy-car"><div class="puppy-slide-layout"><img src="demo-pix/wai-siew--AYS6hFdp7U-unsplash-800x.jpg" /><p class="attribution">Photo by Wai Siew on Unsplash</p></div></div>
+    </div>
+    
+    <div class="instrux">
+	    <h1>Carrerasel</h1>
+	    <h4>Developer-friendly responsive carousel</h4>
+	    <p>This is a responsive carousel. Try changing the size of your browser window, to view the carousel at various breakpoints.</p>
+	    <ul>
+		    <li>At small sizes, it's a vertical carousel slider with arrows but no dots.</li>
+		    <li>Between 768px and 1024px, it's not a carousel &mdash; slides are arbitrarily shown in a grid.</li>
+		    <li>Between 1024px and 1500px, it's a horizontal slider having 2 slides per panel, with arrows and dots, and it auto-advances and loops.</li>
+		    <li>Above 1500px, it's a horizontal slider having 2 slides per panel, with arrows and dots, but it doesn't auto-advance or loop.</li>
+	    </ul>
+	    <h2>Instructions:</h2>
+	    <p>First, mark up a container element with a class <span class="pre">class="c2_placeholder"</span>, and an ID, e.g. <span class="pre">id="demoCarousel"</span>.</p>
+	    <p>Within this container element, place the slides, having any classnames you like. Each direct child will be converted to a slide.</p>
+	    <p>You'll want to define a height for the carousel at different breakpoints, using CSS and @media queries. Use the selector <span class="pre">.c2_placeholder .carrerasel2</span>.</p>
+	    <p>Carrerasel looks for a JavaScript object named <span class="pre">carrerasel2,</span> having a property that corresponds to the container's ID:</p>
+	    <pre>var carrerasel2 = {
+	demoCarousel: { ... }
+}</pre>
+		<p>If you have multiple carousels on the page, you can define multiple properties herein.</p>
+		<p>This property should have a prop <span class="pre">sizes:</span> that's an array of objects, each defining properties above a certain breakpoint. For example, here's how the above carousel is defined above breakpoint 1024(px):</p>
+		<pre>
+demoCarousel: {
+	sizes:[
+		{
+			breakpoint:1024,
+			carWidth:'38%',
+			carMargin:'36px',
+			transDuration:'700ms',
+			transType:'slide',
+			panelCount:2,
+			bulbStep:1,
+			autoplay:2500,
+			pauseOnHover:true,
+		},
+		</pre>
+		
+		<h4>The options for each breakpoint are:</h4>
+		<ul>
+			<li><span class="pre">breakpoint</span>: Minimum window width (in pixels) for which these properties take effect. If omitted, then these define the carousel for the smallest width.</li>
+			<li><span class="pre">carBreadth</span> (or <span class="pre">carWidth</span>): Width of each slide (or height if it's a vertical carousel). Either a number (% is assumed) or a string like '320px' (default 72).</li>
+			<li><span class="pre">carBreadthUnits</span>: Optionally set carBreadth to a number, and set this to 'px' if you prefer it to '%' (default '%').</li>
+			<li><span class="pre">carMargin</span>: Margin between slides, either a number (% is assumed) or a string like '16px' (default 8).</li>
+			<li><span class="pre">carMarginUnits</span>: Optionally set carMargin to a number, and set this to 'px' if you prefer it to '%' (default '%').</li>
+			<li><span class="pre">panelCount</span>: Number of slides you intend to fit on a single panel. Though display is calculated by the <span class="pre">carBreadth</span>, other properties take their cues from this number (default 1).</li>
+			<li><span class="pre">clickAdvance</span>: Number of slides to advance when arrows are clicked (default 1).</li>
+			<li><span class="pre">bulbStep</span>: Number of slides represented by each dot (default 1).</li>
+			<li><span class="pre">transType</span>: Can be 'slide', 'fade' or 'slidev' (default 'slide').</li>
+			<li><span class="pre">transDuration</span>: String like '500ms' or '1.5s' (default 400ms).</li>
+			<li><span class="pre">autoplay</span>: Whether to autoplay the slide transitions (default false).</li>
+			<li><span class="pre">pauseOnHover</span>: Pause autoplay when the mouse hovers over the carousel (default true).</li>
+			<li><span class="pre">hideArrows</span>: Set true to hide the left+right arrows on the carousel (default false).</li>
+			<li><span class="pre">hideDots</span>: Set true to hide the nav dots beneath the carousel (default false).</li>
+			<li><span class="pre">noLoop</span>: Set true to disable infinite looping on the carousel (default false).</li>
+			<li><span class="pre">carouselOff</span>: If you want to disable the carousel entirely at this breakpoint, set this to true (default false).</li>
+		</ul>
+		
+		<h4>Classes</h4>
+		<p>Carrerasel adds helpful classes to the carousel elements:</p>
+		<p><b>Slides:</b></p>
+		<p>When looping is enabled (by default), Carrerasel clones the slides and repeats them before and after the primary slides.</p>
+		<ul>
+			<li><span class="pre">.real-car</span>: assigned to the "primary" slides.</li>
+			<li><span class="pre">.fake-car</span>: assigned to the cloned slides.</li>
+			<li><span class="pre">.fake-car-left</span> and <span class="pre">.fake-car-right</span>: all the cloned slides before ("left" of) and after ("right" of) the primary slides.</li>
+			<li><span class="pre">.car-prime</span>: the current visible slide. When the panel has more than one slide, it's the first slide on the panel.</li>
+			<li><span class="pre">.car-neighbor</span>: the slides adjacent to the .car-prime.</li>
+			<li><span class="pre">.car-panel</span>: the slide(s) on the panel.</li>
+			<li><span class="pre">.car-panel-neighbor</span>: the slides adjacent to the panel.</li>
+			<li>All slides are given a numbered class, <span class="pre">.car-<i>n</i></span>, corresponding to the slide's index.</li>
+			<li>All slides, real and "fake," are given a class <span class="pre">.car-car</span>.</li>
+		</ul>
+		<p><b>Wrapper:</b></p>
+		<p>In addition to <span class="pre">sizes</span>, you can add a property <span class="pre">innerClassName</span> to help you style the carousel elements; this class is added to the container <span class="pre">div</span> that wraps all the slides.</p>
+		<p>This wrapper has a class <span class="pre">transing</span>, while the transition is occurring.</p>
+		<p>If looping is disabled, the wrapper has a class <span class="pre">end-reached</span> when the carousel reaches the beginning or end. When it reaches the beginning, the class <span class="pre">end-reached-min</span> is added; when it reaches the end, the class <span class="pre">end-reached-max</span> is added.</p>
+		
+		<h4>Events</h4>
+		<p>Alongside <span class="pre">sizes</span> you can define a <span class="pre">callbacks</span> object, with keys defining a function that receives a meaningful <span class="pre">data</span> argument, e.g.
+		<pre>
+	callbacks: {
+		init: function( data ) {
+			console.log( 'initted' );
+			console.log( data );
+		}
+	...
+		</pre>
+		<p>For example, you can retrieve the current slide index from <span class="pre">data.carIndex</span>.</p>
+		<p>These callback keys are listed below. For all keys ending in "Before," function can return false to abort the action:</p>
+		<ul>
+			<li><span class="pre">init</span>: Carousel is initialized.</li>
+			<li><span class="pre">carTransitionBefore</span>: Prior to performing the transition.</li>
+			<li><span class="pre">carTransitionAfter</span>: After the transition is done.</li>
+			<li><span class="pre">breakpointCrossedBefore</span>: Prior to making adjustments when the window size changes and crosses a breakpoint.</li>
+			<li><span class="pre">breakpointCrossedAfter</span>: After breakpoint adjustments are made.</li>
+			<li><span class="pre">touchstartBefore</span>: Before touchstart event is processed.</li>
+			<li><span class="pre">touchstartAfter</span>: After touchstart event is processed.</li>
+			<li><span class="pre">touchendBefore</span>: Before touchend event is processed.</li>
+			<li><span class="pre">touchendAfter</span>: After touchend event is processed.</li>
+			<li><span class="pre">checkCarouselityBefore</span>: Before conditions are evaluated to determined if carousel is active or not.</li>
+			<li><span class="pre">checkCarouselityAfter</span>: After determining if carousel is active. Can also return <span class="pre">false</span> to abort carousel.</li>
+		</ul>
+	</div>
+    
+    <script>
+	    var carrerasel2 = {
+		    //containerQuery:'.x2_placeholder',
+		    demoCarousel: {
+			    innerClassName:"myCustomClass",
+			    sizes: [
+				    {
+					    carWidth: 75,
+					    carMargin: '2px',
+					    transDuration: '400ms',
+					    transType:'slidev',
+					    hideDots:true,
+					},
+				    {
+					    breakpoint: 768,
+					    carouselOff:1,
+					},
+					{
+						breakpoint:1024,
+						carBreadth:'38%',
+						carMargin:'36px',
+						transDuration:'700ms',
+						transType:'slide',
+						panelCount:2,
+						bulbStep:1,
+						//clickAdvance:4,
+						autoplay:2500,
+						pauseOnHover:true,
+						//hideDots:1,
+						//noLoop:1,
+					},
+					{
+						breakpoint:1500,
+						carWidth:'570px',
+						carMargin:'36px',
+						transDuration:'900ms',
+						panelCount:2,
+						bulbStep:1,
+						noLoop:true,
+					}
+				],
+				callbacks: {
+					carTransitionBefore: function( data ) {
+						console.log('carTransitionBefore ', data.carIndex);
+						console.log( data );
+						return null;
+					},
+					carTransitionAfter: function( data ) {
+						console.log('carTransitionAfter ', data.carIndex);
+						console.log( data );
+					},
+					init: function( data ) {
+						console.log( 'initted' );
+						console.log( data );
+					},
+					checkCarouselityBefore: function( data ) {
+						console.log( 'checkCarouselityBefore' );
+						console.log( data );
+					},
+				}
+		    }
+	    }
+    </script>
+    <style>
+	    .instrux {
+		    padding:0 2em;
+		    width:100%;
+		    max-width:900px;
+		    margin:0 auto;
+		    color:#777;
+		}
+		.instrux h1, .instrux h2, .instrux h4 {
+			text-align:center;
+		}
+		.instrux span.pre {
+			display:inline;
+			color: #03F;
+			font-family:monospace;
+		}
+		.instrux pre {
+			display:block;
+			background-color:#eee;
+			padding:1em;
+			color: #000;
+		}
+		
+    </style>
   </body>
 </html>
