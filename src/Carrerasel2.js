@@ -1,13 +1,3 @@
-/**
- * Carrerasel2. Props [THIS INFORMATION IS OBSOLETE]:
- * 		className: className(s) that will be added to the outer container
- *		innerClassName: className(s) that will be added to the inner container
- *		duration: duration ( N.NNs or NNNms ) of transition, including s/ms
- *		carBreadth: Width of each slide as % of container (number only), e.g. carBreadth="72" would be 72% of container
- *		carMargin: Gap between each slide as % of container (number only)
- *		breakpoint: max-width breakpoint above which the carousel is nullified
- *		id: Unique id for this carousel; if omitted then one will be generated randomly
- */
 import React, {Component} from 'react';
 
 export default class Carrerasel2 extends React.Component {
@@ -113,8 +103,6 @@ export default class Carrerasel2 extends React.Component {
           clickAdvance: bp.clickAdvance || ( bp.panelCount || 1 ),
           bulbStep: bp.bulbStep || ( bp.panelCount || 1 ),
           transType: (bp.transType && (['slide','fade','slidev'].indexOf( bp.transType.toLowerCase() ) >= 0) )? bp.transType.toLowerCase() : 'slide',
-          //transType: (bp.transType && bp.transType.toLowerCase() == 'fade' ) ? 'fade' : 'slide',
-          //duration:bp.duration || 4000,
           transDuration: bp.transDuration || '400ms',
           autoplay: bp.autoplay || 0,
           pauseOnHover: ('undefined' !== typeof bp.pauseOnHover) ? bp.pauseOnHover : true,
@@ -395,7 +383,6 @@ export default class Carrerasel2 extends React.Component {
         const measureCars = this.carRefs.carInterior.querySelectorAll('.real-car');
 
 				const trMatrix = window.getComputedStyle( this.carRefs.carInterior ).transform || window.getComputedStyle( this.carRefs.carInterior ).WebkitTransform;
-        //const trProps = trMatrix.split('(').pop().split(',');
         const trProps = trMatrix.substring( trMatrix.lastIndexOf('(')+1, trMatrix.lastIndexOf(')') ).split(/, */);
         // establish horizontal start touch point
         this.swipeControl.txStart = parseFloat( trProps[4] );
@@ -451,7 +438,6 @@ export default class Carrerasel2 extends React.Component {
 
         switch( this.hostProps[this.styleRef].transType.toLowerCase() ){
           case 'slidev': {
-            //if ( this.swipeControl.startY < 0 || this.swipeControl.endY < 0 ) { return; }
             let carGuess = -Math.round((dy + this.swipeControl.tyStart - this.swipeControl.tyCenterOffset) / this.swipeControl.tyHeight) ;
             if ( this.hostProps[this.styleRef].noLoop ) {
               carGuess = Math.max(0, Math.min( this.state.carCount-1, carGuess));
@@ -602,8 +588,7 @@ class Carrerasel2Style extends React.Component {
       );
     }
     this.carCenterOffsetString = this.carCenterOffsets.join(' ');
-		//this.localCarCellMargin = 100 * this.carCellMargin / this.carCellBreadth;
-		//this.carCellCombo = 100 + this.localCarCellMargin;
+
 		this.carCellCombo = this.carCellBreadth + this.carCellMargin;
 	}
 
